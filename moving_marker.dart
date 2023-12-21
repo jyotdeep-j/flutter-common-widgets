@@ -46,6 +46,8 @@ class SimpleMarkerAnimationExampleState
     super.initState();
   }
 
+
+  //here we  get list of latitude and longitude
   Future hitApiToGetDeviceTrackList() async {
     deviceTractList?.clear();
     DialogHelper.showLoading();
@@ -79,6 +81,8 @@ class SimpleMarkerAnimationExampleState
     });
   }
 
+
+  //here we add streams for moving marker on map
   showDifferentRestaurants() async {
     if (finalList != null && finalList?.isNotEmpty == true) {
       stream =
@@ -184,6 +188,8 @@ class SimpleMarkerAnimationExampleState
     );
   }
 
+  //this method move marker and animate camera
+
   Future<void> newLocationUpdate(LatLng latLng) async {
     print("check the camear bearing ${currentCameraPosition?.zoom}");
 
@@ -206,11 +212,11 @@ class SimpleMarkerAnimationExampleState
 
 
 
+  //here we dispose the map
 
   disposeMap() async {
     googleMapController?.dispose();
-
-  }
+}
 
 
   @override
